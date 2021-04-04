@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Highradius The server is working</title>
+</head>
+<body>
+	Hello Interns!!! Get Ready for Roller Coaster Ride !!!
+	Ankan Mukherjee 00000000
+	<form action="add_invoice" method="post">
+		Enter Customer Name : <input type="text" name = "customer_name" ><br>
+		Enter Customer No. : <input type="text" name = "customer_no" ><br>
+		Enter Invoice No. : <input type="text" name = "invoice_no" ><br>
+		Enter Invoice Amount : <input type="text" name = "invoice_amount" ><br>
+		Enter Due Date : <input type="date" name = "due_date" ><br>
+		Enter Notes : <input type="text" name = "notes" ><br>
+		
+		<input type="submit"> 
+	</form>
+	
+	<br>
+	<form action="update_invoice" method="post">
+		Enter doc_id: <input type="text" name="doc_id"><br>
+		Enter updated_amount: <input type="text" name="updated_amount"><br>
+		
+		<input type="submit"> 
+	</form>
+	
+	<br>
+	<form action="delete_invoice" method="post">
+		Enter doc_id: <input type="text" name="doc_id"><br>
+		<input type="submit"> 
+	</form>
+	
+	<br>
+	<form action="search_invoice" method="post">
+		Enter invoice_id: <input type="text" name="invoice_id"><br>
+		<input type="submit"> 
+	</form>
+	
+	<br>
+	<a href="AddInvoiceDataPageServlet?page=1">View Employees</a>
+	
+</body>
+</html>
