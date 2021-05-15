@@ -1,0 +1,52 @@
+USE `h2h_internship`;
+
+/*Table structure for table `invoice_details` */
+
+DROP TABLE IF EXISTS `invoice_details`;
+
+CREATE TABLE `invoice_details` (
+  `business_code` CHAR(4) DEFAULT NULL,
+  `cust_number` VARCHAR(255) DEFAULT NULL,
+  `name_customer` VARCHAR(255) DEFAULT NULL,
+  `clear_date` DATETIME DEFAULT NULL,
+  `business_year` YEAR(4) DEFAULT NULL,
+  `doc_id` INT(11) NOT NULL,
+  `posting_date` DATE DEFAULT NULL,
+  `document_create_date` DATE DEFAULT NULL,
+  `document_create_date1` DATE DEFAULT NULL,
+  `due_in_date` DATE DEFAULT NULL,
+  `invoice_currency` CHAR(3) DEFAULT NULL,
+  `document_type` CHAR(2) DEFAULT NULL,
+  `posting_id` TINYINT(4) DEFAULT NULL,
+  `area_business` VARCHAR(255) DEFAULT NULL,
+  `total_open_amount` DOUBLE DEFAULT NULL,
+  `baseline_create_date` DATE DEFAULT NULL,
+  `cust_payment_terms` CHAR(4) DEFAULT NULL,
+  `invoice_id` INT(11) DEFAULT NULL,
+  `isOpen` TINYINT(4) DEFAULT NULL,
+  PRIMARY KEY (`doc_id`)
+) ENGINE=INNODB DEFAULT CHARSET=utf8;
+
+ALTER TABLE invoice_details MODIFY doc_id BIGINT(11) NOT NULL;
+ALTER TABLE invoice_details MODIFY invoice_id BIGINT(11) DEFAULT NULL;
+ALTER TABLE invoice_details ADD COLUMN notes TEXT NULL;
+
+
+DESC invoice_details;
+SELECT * FROM invoice_details;
+
+SELECT COUNT(*) FROM invoice_details;
+
+SELECT * FROM invoice_details WHERE cust_number=12321 ;
+UPDATE invoice_details SET total_open_amount = 444,notes="kkkkkk" WHERE doc_id=4912563737;
+DELETE FROM invoice_details WHERE doc_id=1;
+SELECT * FROM invoice_details WHERE invoice_id LIKE '192860%' LIMIT 1,5;//1928600033
+SELECT * FROM invoice_details WHERE invoice_id LIKE '1928%';
+SELECT * FROM invoice_details LIMIT 50000,100;
+SELECT MAX(doc_id) AS LargestDocId FROM invoice_details;
+SELECT MIN(doc_id) AS SmallestDocId FROM invoice_details;
+SELECT * FROM invoice_details WHERE invoice_id=8888;
+SELECT * FROM invoice_details WHERE doc_id=1107482882;
+
+
+DROP TABLE invoice_details;
